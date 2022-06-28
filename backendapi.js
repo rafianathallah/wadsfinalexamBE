@@ -12,8 +12,8 @@
 // const HOST = "localhost";
 // app.use(morgan('dev'));
 
-//Add & show users
-let users = [
+//Add & show customers
+let customers = [
     {
         "firstName": "Raiden",
         "lastName": "Shogun"
@@ -29,47 +29,46 @@ let users = [
     {
         "firstName": "Kuki",
         "lastName": "Shinobu"
-    },
+    }
 ]
 
-app.get('/users', (req, res) => {
-    res.send(users);
+app.get('/customers', (req, res) => {
+    res.send(customers);
 })
-app.post('/users', (req, res) => {
-    const user = req.body;
-    users.push(user)
-    res.send('added')
+app.post('/customers', (req, res) => {
+    const customer = req.body;
+    customers.push(customer)
+    res.send('Successfully added')
 })
 
-
-//Add & show products
+//Add & show coffees
 app.get("/", (req, res) => res.send("..."));
-let products = [
+let coffees = [
     {
-        "name": "Athenaeum",
+        "coffeeName": "Athenaeum",
         "price": 8
     },
     {
-        "name": "Foamy Reef",
+        "coffeeName": "Foamy Reef",
         "price": 16
     },
     {
-        "name": "Golden Eden",
+        "coffeeName": "Golden Eden",
         "price": 24
     },
     {
-        "name": "Caramel Pinecone",
+        "coffeeName": "Caramel Pinecone",
         "price": 44
-    },
+    }
 ]
 
-app.get('/products', (req, res) => {
-    res.send(products);
+app.get('/coffees', (req, res) => {
+    res.send(coffees);
 })
-app.post('/products', (req, res) => {
-    const product = req.body;
-    products.push(product)
-    res.send('added')
+app.post('/coffees', (req, res) => {
+    const coffee = req.body;
+    coffees.push(coffee)
+    res.send('Succesfully added')   
 })
 
 // app.listen(PORT , HOST, () => {});
